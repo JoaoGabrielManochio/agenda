@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -31,16 +32,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item{{ Request::is(['dashboard/schedules/*', 'dashboard/schedules']) ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('schedules.index') }}">Agendamentos</a>
+                        <li class="nav-item{{ Request::is(['contatos/*', 'contatos']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('contatos.index') }}">Contatos</a>
                         </li>
-                        <li class="nav-item{{ Request::is(['dashboard/doctors/*', 'dashboard/doctors']) ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('doctors.index') }}">Médicos</a>
-                        </li>
-                        <li class="nav-item{{ Request::is(['dashboard/patients/*', 'dashboard/patients']) ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('patients.index') }}">Pacientes</a>
-                        </li>
-                        <li class="nav-item{{ Request::is(['dashboard/users/*', 'dashboard/users']) ? ' active' : '' }}">
+                        <li class="nav-item{{ Request::is(['users/*', 'users']) ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('users.index') }}">Usuários</a>
                         </li>
                     </ul>
@@ -70,6 +65,7 @@
         </nav>
         @endauth
         <main class="py-4">
+            @include('flash::message')
             @yield('content')
         </main>
     </div>

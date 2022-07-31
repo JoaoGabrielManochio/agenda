@@ -3,21 +3,23 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Agenda</div>
-
+                <div class="card-header d-flex justify-content-between">
+                    <span>Contatos</span>
+                    <a href="{{ route('contatos.create') }}" class="btn btn-sm btn-success">Novo Contato</a>
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @include('pages.contatos.table')
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
