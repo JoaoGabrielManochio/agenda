@@ -62,3 +62,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instruções para rodar o projeto
+
+Ao clonar o projeto, será necessário seguir os seguintes passos
+
+ - renomear o arquivo ".env.example" para ".env"
+ - rodar o comando make up (esse comando irá executar uma rotina de comandos, onde irá subir o container do docker e fazer a instalação das dependências do projeto)
+ - rodar o comando cd .docker/
+ - rodar o comando docker-compose exec php-fpm php artisan migrate (criação da tabela no banco de dados)
+
+Para acessar o ambiente -> http://localhost:8005/
+Para acessar o banco -> http://localhost:8080/
+
+Os dados de acesso ao banco estão no arquivo .env
